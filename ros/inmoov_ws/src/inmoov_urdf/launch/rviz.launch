@@ -1,0 +1,16 @@
+<launch>
+   <param name="robot_description" textfile="$(find inmoov_urdf)/urdf/inmoov.urdf" />
+   <arg name="gui" default="False" />
+   <arg name="port" default="/dev/ttyACM0" />
+   <arg name="baud" default="230400" />
+
+   <param name="use_gui" value="$(arg gui)"/>
+   <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" ></node>
+   <node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher" />
+   <node name="rviz" pkg="rviz" type="rviz" />
+   <node pkg="inmoov_urdf" name="joint_angle_publisher" type="joint_angle_publisher.py" output="screen"/>
+	<node pkg="rosserial_python" type="serial_node.py" name="serial_node" output="screen">
+    <param name="port" value="$(arg port)" />
+    <param name ="baud" value="$(arg baud)" />
+    </node>
+</launch>

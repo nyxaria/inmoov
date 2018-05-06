@@ -1,0 +1,2575 @@
+<robot
+  name="in-moov-ros">
+  <link
+    name="body">
+    <inertial>
+      <origin
+        xyz="-0.00036496 0.40564 0.0023075"
+        rpy="0 0 0" />
+      <mass
+        value="15.766" />
+      <inertia
+        ixx="2.4828"
+        ixy="0.0069362"
+        ixz="0.00022135"
+        iyy="0.0099095"
+        iyz="-0.014984"
+        izz="2.4892" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://in-moov-ros/meshes/body.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://in-moov-ros/meshes/body.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="neck">
+    <inertial>
+      <origin
+        xyz="-2.0687E-16 0.1389 -0.0001328"
+        rpy="0 0 0" />
+      <mass
+        value="0.25316" />
+      <inertia
+        ixx="0.00029193"
+        ixy="5.0752E-19"
+        ixz="-1.2705E-21"
+        iyy="2.9003E-09"
+        iyz="9.2015E-07"
+        izz="0.00029193" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://in-moov-ros/meshes/neck.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://in-moov-ros/meshes/neck.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="body_neck"
+    type="revolute">
+    <origin
+      xyz="0.00016959 -0.0062219 1.7981"
+      rpy="1.5669 -0.0019888 1.5866" />
+    <parent
+      link="body" />
+    <child
+      link="neck" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-1.5708"
+      upper="1.5708"
+      effort="0.1"
+      velocity="0.5" />
+  </joint>
+  <link
+    name="head">
+    <inertial>
+      <origin
+        xyz="0.0275601298028067 0.0341896448366592 0.0223557737488301"
+        rpy="0 0 0" />
+      <mass
+        value="0.458114234512439" />
+      <inertia
+        ixx="0.00244680914288485"
+        ixy="-6.54874787543786E-05"
+        ixz="3.49849091920927E-06"
+        iyy="0.00178428309875334"
+        iyz="0.000487495610973482"
+        izz="0.0018313529317366" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://in-moov-ros/meshes/head.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://in-moov-ros/meshes/head.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="neck-head"
+    type="revolute">
+    <origin
+      xyz="0 0.22008 -0.030143"
+      rpy="1.5708 -1.5669 -1.5708" />
+    <parent
+      link="neck" />
+    <child
+      link="head" />
+    <axis
+      xyz="0.99999 0.0039304 0" />
+    <limit
+      lower="-0.7854"
+      upper="0.7854"
+      effort="0.1"
+      velocity="0.5" />
+  </joint>
+  <link
+    name="r_ushoulder">
+    <inertial>
+      <origin
+        xyz="0.000671950204969907 -0.04292026230062 0.0248376746123014"
+        rpy="0 0 0" />
+      <mass
+        value="0.239762184615612" />
+      <inertia
+        ixx="1.72680019802952E-06"
+        ixy="4.69305914659023E-06"
+        ixz="-4.34536441582732E-06"
+        iyy="2.44870785054182E-05"
+        iyz="8.60825046492372E-07"
+        izz="2.46197732578285E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://in-moov-ros/meshes/r_ushoulder.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://in-moov-ros/meshes/r_ushoulder.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="body-r_ushoulder"
+    type="revolute">
+    <origin
+      xyz="-0.14342 0.01941 1.8131"
+      rpy="1.5708 0 0" />
+    <parent
+      link="body" />
+    <child
+      link="r_ushoulder" />
+    <axis
+      xyz="-9.3469E-05 0 1" />
+    <limit
+      lower="-1.0472"
+      upper="0"
+      effort="0.1"
+      velocity="0.5" />
+  </joint>
+  <link
+    name="r_lshoulder">
+    <inertial>
+      <origin
+        xyz="0.0436936560402577 -0.024339935306763 0.00103956258715288"
+        rpy="0 0 0" />
+      <mass
+        value="0.375755866749908" />
+      <inertia
+        ixx="0.000261001417007462"
+        ixy="0.000162022089284694"
+        ixz="-7.7541103894423E-06"
+        iyy="0.00026658164213002"
+        iyz="1.41395507047117E-05"
+        izz="0.000471618092608574" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://in-moov-ros/meshes/r_lshoulder.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://in-moov-ros/meshes/r_lshoulder.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="r_ushoulder-r_lshoulder"
+    type="revolute">
+    <origin
+      xyz="-0.013353 -0.038987 0.028148"
+      rpy="3.1415 0.0013376 3.1084" />
+    <parent
+      link="r_ushoulder" />
+    <child
+      link="r_lshoulder" />
+    <axis
+      xyz="-0.99949 0.031831 0.0024862" />
+    <limit
+      lower="-1.5708"
+      upper="1.5707"
+      effort="0.1"
+      velocity="0.5" />
+  </joint>
+  <link
+    name="r_bicep">
+    <inertial>
+      <origin
+        xyz="0.0735798015553435 -0.00275101682569723 0.00420741940684091"
+        rpy="0 0 0" />
+      <mass
+        value="0.500840387154498" />
+      <inertia
+        ixx="0.000451123143853219"
+        ixy="0.000128363906766688"
+        ixz="-0.000205545197659192"
+        iyy="0.00174962406860818"
+        iyz="5.14510656987691E-06"
+        izz="0.00174985964629928" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://in-moov-ros/meshes/r_bicep.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://in-moov-ros/meshes/r_bicep.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="r_lshoulder-r_bicep"
+    type="revolute">
+    <origin
+      xyz="0.067348 -0.051653 -0.0012139"
+      rpy="-0.52635 0.019284 -1.5708" />
+    <parent
+      link="r_lshoulder" />
+    <child
+      link="r_bicep" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      lower="-1.5708"
+      upper="1.5707"
+      effort="0.1"
+      velocity="0.5" />
+  </joint>
+  <link
+    name="r_forearm">
+    <inertial>
+      <origin
+        xyz="0.0304250404920007 -0.15806700443433 -0.00650108892465112"
+        rpy="0 0 0" />
+      <mass
+        value="0.189164971086976" />
+      <inertia
+        ixx="0.00158596942979616"
+        ixy="5.44353398586309E-05"
+        ixz="-1.59049329978372E-05"
+        iyy="3.89354420474019E-05"
+        iyz="-4.95035116861518E-05"
+        izz="0.00158696085575712" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://in-moov-ros/meshes/r_forearm.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://in-moov-ros/meshes/r_forearm.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="r_bicep-r_forearm"
+    type="revolute">
+    <origin
+      xyz="0.23082 0.007568 0.038077"
+      rpy="-3.1217 0.54522 -1.5708" />
+    <parent
+      link="r_bicep" />
+    <child
+      link="r_forearm" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-1.5708"
+      upper="0"
+      effort="0.1"
+      velocity="0.5" />
+  </joint>
+  <link
+    name="r_wrist">
+    <inertial>
+      <origin
+        xyz="0.000989822226093229 -0.0127078382399194 -0.0268438081267682"
+        rpy="0 0 0" />
+      <mass
+        value="0.0119642173722164" />
+      <inertia
+        ixx="1.07277532378738E-06"
+        ixy="5.43162185001922E-08"
+        ixz="1.36866120735995E-07"
+        iyy="9.47019307865531E-07"
+        iyz="-3.67809693174284E-07"
+        izz="1.66179366677028E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://in-moov-ros/meshes/r_wrist.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://in-moov-ros/meshes/r_wrist.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="r_forearm-r_wrist"
+    type="fixed">
+    <origin
+      xyz="0.034656 -0.26691 -0.011531"
+      rpy="2.0453 0.66254 -3.1363" />
+    <parent
+      link="r_forearm" />
+    <child
+      link="r_wrist" />
+    <axis
+      xyz="0 0.44909 0.89349" />
+  </joint>
+  <link
+    name="r_hand">
+    <inertial>
+      <origin
+        xyz="0.00233692739284752 -0.0178678834900556 -0.0376507131245349"
+        rpy="0 0 0" />
+      <mass
+        value="0.0901045784210758" />
+      <inertia
+        ixx="7.66456489339256E-06"
+        ixy="2.22999105948227E-07"
+        ixz="3.51396648812636E-06"
+        iyy="9.25135473232267E-06"
+        iyz="-4.84448373704147E-07"
+        izz="1.64827679652014E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://in-moov-ros/meshes/r_hand.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://in-moov-ros/meshes/r_hand.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="r_wrist-r_hand"
+    type="fixed">
+    <origin
+      xyz="0 -0.022454 -0.044674"
+      rpy="-0.032461 -0.016343 0.009295" />
+    <parent
+      link="r_wrist" />
+    <child
+      link="r_hand" />
+    <axis
+      xyz="-0.74929 -0.59171 0.2974" />
+  </joint>
+  <link
+    name="r_thumb1">
+    <inertial>
+      <origin
+        xyz="0.00198138458425894 0.0187209470894034 0.0138017775408996"
+        rpy="0 0 0" />
+      <mass
+        value="0.0103774828259405" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://in-moov-ros/meshes/r_thumb1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://in-moov-ros/meshes/r_thumb1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="r_hand-r_thumb1"
+    type="revolute">
+    <origin
+      xyz="-0.020821 -0.023952 -0.0052221"
+      rpy="-1.1846 0.376 2.2889" />
+    <parent
+      link="r_hand" />
+    <child
+      link="r_thumb1" />
+    <axis
+      xyz="-0.0045381 -0.99999 0.0027875" />
+    <limit
+      lower="0"
+      upper="1.5708"
+      effort="0.1"
+      velocity="0.5" />
+  </joint>
+  <link
+    name="r_thumb2">
+    <inertial>
+      <origin
+        xyz="-0.00429045728654731 9.24075025717161E-05 0.0163287574941003"
+        rpy="0 0 0" />
+      <mass
+        value="0.00825567750182289" />
+      <inertia
+        ixx="1.34569909045368E-09"
+        ixy="-2.4688186948144E-12"
+        ixz="-4.36249662014912E-10"
+        iyy="1.48708424042599E-09"
+        iyz="-7.61531976726277E-12"
+        izz="1.41471343019307E-10" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://in-moov-ros/meshes/r_thumb2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://in-moov-ros/meshes/r_thumb2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="r_thumb1-r_thumb2"
+    type="revolute">
+    <origin
+      xyz="0.0019684 0.026902 0.030158"
+      rpy="0.22364 -0.72297 -1.8083" />
+    <parent
+      link="r_thumb1" />
+    <child
+      link="r_thumb2" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="0"
+      upper="1.5708"
+      effort="0.1"
+      velocity="0.5" />
+  </joint>
+  <link
+    name="r_thumb3">
+    <inertial>
+      <origin
+        xyz="-0.00618670050212544 -0.00915970753686046 -0.00784709575981357"
+        rpy="0 0 0" />
+      <mass
+        value="0.00583409461217138" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://in-moov-ros/meshes/r_thumb3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://in-moov-ros/meshes/r_thumb3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="r_thumb2-r_thumb3"
+    type="revolute">
+    <origin
+      xyz="0 -0.00050927 0.035023"
+      rpy="-1.9307 0.57688 -1.9401" />
+    <parent
+      link="r_thumb2" />
+    <child
+      link="r_thumb3" />
+    <axis
+      xyz="-0.30256 -0.1442 0.94216" />
+    <limit
+      lower="0"
+      upper="1.5708"
+      effort="0.1"
+      velocity="0.5" />
+  </joint>
+  <link
+    name="r_index1">
+    <inertial>
+      <origin
+        xyz="0.011856588248862 -0.000373332867510207 -0.0175460185906964"
+        rpy="0 0 0" />
+      <mass
+        value="0.00573349927118284" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://in-moov-ros/meshes/r_index1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://in-moov-ros/meshes/r_index1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="r_hand-r_index1"
+    type="revolute">
+    <origin
+      xyz="-0.015449 -0.056888 -0.076224"
+      rpy="0.44666 -0.38776 -2.5136" />
+    <parent
+      link="r_hand" />
+    <child
+      link="r_index1" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="0"
+      upper="1.5708"
+      effort="0.1"
+      velocity="0.5" />
+  </joint>
+  <link
+    name="r_index2">
+    <inertial>
+      <origin
+        xyz="0.0105196841267737 -0.000873491238897101 -0.0109435842643855"
+        rpy="0 0 0" />
+      <mass
+        value="0.00321872985565448" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://in-moov-ros/meshes/r_index2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://in-moov-ros/meshes/r_index2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="r_index1-r_index2"
+    type="revolute">
+    <origin
+      xyz="0.0013918 -0.00086252 -0.036493"
+      rpy="-0.026219 -0.015258 0.0049793" />
+    <parent
+      link="r_index1" />
+    <child
+      link="r_index2" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="0"
+      upper="1.5708"
+      effort="0.1"
+      velocity="0.5" />
+  </joint>
+  <link
+    name="r_index3">
+    <inertial>
+      <origin
+        xyz="0.00687775787662051 -0.000991024131213991 -0.0147840113557407"
+        rpy="0 0 0" />
+      <mass
+        value="0.00300404555915362" />
+      <inertia
+        ixx="1.33087773993811E-07"
+        ixy="-4.74023903021064E-09"
+        ixz="-7.80180597391208E-09"
+        iyy="9.78304168720258E-08"
+        iyz="-5.90595662661259E-08"
+        izz="3.65097342563214E-08" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://in-moov-ros/meshes/r_index3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://in-moov-ros/meshes/r_index3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="r_index2-r_index3"
+    type="revolute">
+    <origin
+      xyz="0 -0.00042115 -0.024114"
+      rpy="0.54887 -0.05203 -0.7079" />
+    <parent
+      link="r_index2" />
+    <child
+      link="r_index3" />
+    <axis
+      xyz="0.7587 0.53411 -0.37295" />
+    <limit
+      lower="0"
+      upper="1.5708"
+      effort="0.1"
+      velocity="0.5" />
+  </joint>
+  <link
+    name="r_middle1">
+    <inertial>
+      <origin
+        xyz="0.00705781340882167 0.000401568098696736 0.0188473459998024"
+        rpy="0 0 0" />
+      <mass
+        value="0.00722021591630207" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://in-moov-ros/meshes/r_middle1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://in-moov-ros/meshes/r_middle1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="r_hand-r_middle1"
+    type="revolute">
+    <origin
+      xyz="0.0014588 -0.044934 -0.08573"
+      rpy="-2.7336 -0.30196 -2.4732" />
+    <parent
+      link="r_hand" />
+    <child
+      link="r_middle1" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="0"
+      upper="1.5708"
+      effort="0.1"
+      velocity="0.5" />
+  </joint>
+  <link
+    name="r_middle2">
+    <inertial>
+      <origin
+        xyz="-0.00760189409487394 -0.00093856301344189 0.011789225926748"
+        rpy="0 0 0" />
+      <mass
+        value="0.0039338110234678" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://in-moov-ros/meshes/r_middle2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://in-moov-ros/meshes/r_middle2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="r_middle1-r_middle2"
+    type="revolute">
+    <origin
+      xyz="-0.00065409 0.00084977 0.038834"
+      rpy="-0.06032 0.01683 -3.1411" />
+    <parent
+      link="r_middle1" />
+    <child
+      link="r_middle2" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      lower="0"
+      upper="1.5708"
+      effort="0.1"
+      velocity="0.5" />
+  </joint>
+  <link
+    name="r_middle3">
+    <inertial>
+      <origin
+        xyz="0.00593868224634636 -0.00143488158091087 -0.0141709175721784"
+        rpy="0 0 0" />
+      <mass
+        value="0.00375584453933763" />
+      <inertia
+        ixx="1.98812579127019E-07"
+        ixy="8.9276955904773E-10"
+        ixz="1.72901746384282E-09"
+        iyy="1.56983096898908E-07"
+        iyz="-8.10476063094582E-08"
+        izz="4.18675737703318E-08" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://in-moov-ros/meshes/r_middle3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://in-moov-ros/meshes/r_middle3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="r_middle2-r_middle3"
+    type="revolute">
+    <origin
+      xyz="0 -0.00044815 0.025861"
+      rpy="-2.7142 0.030327 -2.4183" />
+    <parent
+      link="r_middle2" />
+    <child
+      link="r_middle3" />
+    <axis
+      xyz="0.74929 0.59289 -0.29504" />
+    <limit
+      lower="0"
+      upper="1.5708"
+      effort="0.1"
+      velocity="0.5" />
+  </joint>
+  <link
+    name="r_ring1">
+    <inertial>
+      <origin
+        xyz="-0.00699049689480552 0.0003066918810328 0.0151876899385328"
+        rpy="0 0 0" />
+      <mass
+        value="0.00357714942001018" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://in-moov-ros/meshes/r_ring1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://in-moov-ros/meshes/r_ring1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="r_hand-r_ring1"
+    type="revolute">
+    <origin
+      xyz="0.014092 -0.031542 -0.082838"
+      rpy="-2.6895 -0.21954 -2.434" />
+    <parent
+      link="r_hand" />
+    <child
+      link="r_ring1" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="0"
+      upper="1.5708"
+      effort="0.1"
+      velocity="0.5" />
+  </joint>
+  <link
+    name="r_ring2">
+    <inertial>
+      <origin
+        xyz="-0.00660357045176913 -0.000750838826595768 -0.00941791826741134"
+        rpy="0 0 0" />
+      <mass
+        value="0.00203424539732507" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://in-moov-ros/meshes/r_ring2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://in-moov-ros/meshes/r_ring2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="r_ring1-r_ring2"
+    type="revolute">
+    <origin
+      xyz="-0.00050252 0.00068528 0.031316"
+      rpy="-3.103 -0.016047 -6.8119E-05" />
+    <parent
+      link="r_ring1" />
+    <child
+      link="r_ring2" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="0"
+      upper="1.5708"
+      effort="0.1"
+      velocity="0.5" />
+  </joint>
+  <link
+    name="r_ring3">
+    <inertial>
+      <origin
+        xyz="-0.480357641406567 0.27944817134438 0.906453101505094"
+        rpy="0 0 0" />
+      <mass
+        value="0.00197681334276215" />
+      <inertia
+        ixx="6.45776965326771E-08"
+        ixy="1.47773605643258E-09"
+        ixz="3.16578388318244E-09"
+        iyy="5.3213387893497E-08"
+        iyz="-2.47509105415937E-08"
+        izz="1.1742330529178E-08" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://in-moov-ros/meshes/r_ring3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://in-moov-ros/meshes/r_ring3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="r_ring2-r_ring3"
+    type="revolute">
+    <origin
+      xyz="0.39271 -0.22165 -0.99182"
+      rpy="0.40945 0.038035 -0.7366" />
+    <parent
+      link="r_ring2" />
+    <child
+      link="r_ring3" />
+    <axis
+      xyz="0.74022 0.62746 -0.2416" />
+    <limit
+      lower="0"
+      upper="1.5708"
+      effort="0.1"
+      velocity="0.5" />
+  </joint>
+  <link
+    name="r_pinkie1">
+    <inertial>
+      <origin
+        xyz="-0.00655357759976971 0.000370479252580047 0.0167832302113274"
+        rpy="0 0 0" />
+      <mass
+        value="0.00512138291048097" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://in-moov-ros/meshes/r_pinkie1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://in-moov-ros/meshes/r_pinkie1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="r_hand-r_pinkie1"
+    type="revolute">
+    <origin
+      xyz="0.031631 -0.010539 -0.080334"
+      rpy="-2.7323 -0.063551 -2.3844" />
+    <parent
+      link="r_hand" />
+    <child
+      link="r_pinkie1" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="0"
+      upper="1.5708"
+      effort="0.1"
+      velocity="0.5" />
+  </joint>
+  <link
+    name="r_pinkie2">
+    <inertial>
+      <origin
+        xyz="0.00609198947729894 0.000829679957156437 -0.0105512799821008"
+        rpy="0 0 0" />
+      <mass
+        value="0.0027624047566469" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://in-moov-ros/meshes/r_pinkie2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://in-moov-ros/meshes/r_pinkie2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="r_pinkie1-r_pinkie2"
+    type="revolute">
+    <origin
+      xyz="-0.00056421 0.00080043 0.034768"
+      rpy="3.1101 0.016105 -3.1363" />
+    <parent
+      link="r_pinkie1" />
+    <child
+      link="r_pinkie2" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      lower="0"
+      upper="1.5708"
+      effort="0.1"
+      velocity="0.5" />
+  </joint>
+  <link
+    name="r_pinkie3">
+    <inertial>
+      <origin
+        xyz="-0.00925744703297915 -0.0113719394682148 -0.00850722135443283"
+        rpy="0 0 0" />
+      <mass
+        value="0.002661358956307" />
+      <inertia
+        ixx="1.07687771636008E-07"
+        ixy="4.12431272833174E-09"
+        ixz="9.77602915874549E-09"
+        iyy="9.24625311719271E-08"
+        iyz="-3.85670584647383E-08"
+        izz="1.73161129908935E-08" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://in-moov-ros/meshes/r_pinkie3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://in-moov-ros/meshes/r_pinkie3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="r_pinkie2-r_pinkie3"
+    type="revolute">
+    <origin
+      xyz="-0.006587 0.0015397 -0.023834"
+      rpy="0.38014 0.09682 2.4338" />
+    <parent
+      link="r_pinkie2" />
+    <child
+      link="r_pinkie3" />
+    <axis
+      xyz="0.75622 0.63102 -0.17305" />
+    <limit
+      lower="0"
+      upper="1.5708"
+      effort="0.1"
+      velocity="0.5" />
+  </joint>
+  <link
+    name="l_ushoulder">
+    <inertial>
+      <origin
+        xyz="0.0246703162725057 -0.0428714189147894 0.00215511640415289"
+        rpy="0 0 0" />
+      <mass
+        value="0.239762184629767" />
+      <inertia
+        ixx="2.46205848140536E-05"
+        ixy="7.09982168058852E-07"
+        ixz="-4.37033167046245E-06"
+        iyy="2.47837116927303E-05"
+        iyz="3.89690505484661E-06"
+        izz="1.42935513136915E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://in-moov-ros/meshes/l_ushoulder.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://in-moov-ros/meshes/l_ushoulder.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="body-l_ushoulder"
+    type="revolute">
+    <origin
+      xyz="0.14336 0.019383 1.813"
+      rpy="1.5708 6.7131E-08 -1.5709" />
+    <parent
+      link="body" />
+    <child
+      link="l_ushoulder" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="0"
+      upper="1.0472"
+      effort="0.1"
+      velocity="0.5" />
+  </joint>
+  <link
+    name="l_lshoulder">
+    <inertial>
+      <origin
+        xyz="0.0447936558507376 -0.0243170697373587 -0.00148096543953107"
+        rpy="0 0 0" />
+      <mass
+        value="0.37575586683365" />
+      <inertia
+        ixx="0.000261001416099377"
+        ixy="0.000161854747165151"
+        ixz="1.06922308422143E-05"
+        iyy="0.000267162074549697"
+        iyz="-1.78493904309633E-05"
+        izz="0.000471037654021621" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://in-moov-ros/meshes/l_lshoulder.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://in-moov-ros/meshes/l_lshoulder.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="l_ushoulder-l_lshoulder"
+    type="revolute">
+    <origin
+      xyz="0.027983 -0.039423 -0.010897"
+      rpy="-2.3188 1.569 -2.3188" />
+    <parent
+      link="l_ushoulder" />
+    <child
+      link="l_lshoulder" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-1.5708"
+      upper="1.5707"
+      effort="0.1"
+      velocity="0.5" />
+  </joint>
+  <link
+    name="l_bicep">
+    <inertial>
+      <origin
+        xyz="0.0735798014763804 -0.00271029462385916 0.00423376599471867"
+        rpy="0 0 0" />
+      <mass
+        value="0.500840386557515" />
+      <inertia
+        ixx="0.000451123140477207"
+        ixy="0.000134878172966728"
+        ixz="-0.000201330570053874"
+        iyy="0.00175366703871805"
+        iyz="3.32849760719024E-06"
+        izz="0.00174581665958994" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://in-moov-ros/meshes/l_bicep.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://in-moov-ros/meshes/l_bicep.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="l_lshoulder-l_bicep"
+    type="revolute">
+    <origin
+      xyz="0.068448 -0.051666 0.00027666"
+      rpy="2.4376 -0.0011409 -1.5708" />
+    <parent
+      link="l_lshoulder" />
+    <child
+      link="l_bicep" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      lower="-1.5708"
+      upper="1.5707"
+      effort="0.1"
+      velocity="0.5" />
+  </joint>
+  <link
+    name="l_forearm">
+    <inertial>
+      <origin
+        xyz="0.0219359191888206 -0.157745086788732 -0.0119970683342659"
+        rpy="0 0 0" />
+      <mass
+        value="0.189164971116667" />
+      <inertia
+        ixx="0.00158596943029322"
+        ixy="-5.49557895633257E-05"
+        ixz="1.40012331408004E-05"
+        iyy="4.42524544023364E-05"
+        iyz="-0.000103214325820295"
+        izz="0.00158164384422061" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://in-moov-ros/meshes/l_forearm.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://in-moov-ros/meshes/l_forearm.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="l_bicep-l_forearm"
+    type="revolute">
+    <origin
+      xyz="0.23082 0.0052838 0.03841"
+      rpy="-3.1406 0.60329 -1.5708" />
+    <parent
+      link="l_bicep" />
+    <child
+      link="l_forearm" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-1.5708"
+      upper="0"
+      effort="0.1"
+      velocity="0.5" />
+  </joint>
+  <link
+    name="l_wrist">
+    <inertial>
+      <origin
+        xyz="0.00022599941181288 -0.0130287521309274 -0.0260328474790028"
+        rpy="0 0 0" />
+      <mass
+        value="0.0113196953812788" />
+      <inertia
+        ixx="9.65388056733172E-07"
+        ixy="1.67928092919273E-08"
+        ixz="3.34806745312567E-08"
+        iyy="7.72795085621246E-07"
+        iyz="-3.86879788397766E-07"
+        izz="1.95499479020736E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://in-moov-ros/meshes/l_wrist.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://in-moov-ros/meshes/l_wrist.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="l_forearm-l_wrist"
+    type="fixed">
+    <origin
+      xyz="0.017705 -0.26624 -0.020808"
+      rpy="-1.066 -0.7735 -0.027204" />
+    <parent
+      link="l_forearm" />
+    <child
+      link="l_wrist" />
+    <axis
+      xyz="0 0.44909 0.89349" />
+  </joint>
+  <link
+    name="l_hand">
+    <inertial>
+      <origin
+        xyz="0.00173257973577043 0.0172900777226329 -0.0380263878224106"
+        rpy="0 0 0" />
+      <mass
+        value="0.0901045771243662" />
+      <inertia
+        ixx="7.66456254799865E-06"
+        ixy="-2.22999098159014E-07"
+        ixz="3.51396588830018E-06"
+        iyy="9.25135233253811E-06"
+        iyz="4.84448290705732E-07"
+        izz="1.64827673994319E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://in-moov-ros/meshes/l_hand.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://in-moov-ros/meshes/l_hand.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="l_wrist-l_hand"
+    type="fixed">
+    <origin
+      xyz="0 -0.022454 -0.044674"
+      rpy="-0.49993 0.448 1.4343" />
+    <parent
+      link="l_wrist" />
+    <child
+      link="l_hand" />
+    <axis
+      xyz="0.74929 -0.59171 -0.2974" />
+  </joint>
+  <link
+    name="l_thumb1">
+    <inertial>
+      <origin
+        xyz="0.0020027967930655 0.0234393731313465 -0.0137886241976829"
+        rpy="0 0 0" />
+      <mass
+        value="0.0103774832957012" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://in-moov-ros/meshes/l_thumb1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://in-moov-ros/meshes/l_thumb1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="l_hand-l_thumb1"
+    type="revolute">
+    <origin
+      xyz="-0.02114 0.021018 -0.0015198"
+      rpy="-2.0162 0.30134 -2.469" />
+    <parent
+      link="l_hand" />
+    <child
+      link="l_thumb1" />
+    <axis
+      xyz="-0.0045381 -0.99999 -0.0027875" />
+    <limit
+      lower="-1.5708"
+      upper="0"
+      effort="0.1"
+      velocity="0.5" />
+  </joint>
+  <link
+    name="l_thumb2">
+    <inertial>
+      <origin
+        xyz="0.00758694414330352 -0.00060168014176485 -0.0186942028199742"
+        rpy="0 0 0" />
+      <mass
+        value="0.00825567750185527" />
+      <inertia
+        ixx="1.34569909044339E-09"
+        ixy="2.46881868706217E-12"
+        ixz="-4.36249662018408E-10"
+        iyy="1.4870842404193E-09"
+        iyz="7.61531974323246E-12"
+        izz="1.41471343022354E-10" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://in-moov-ros/meshes/l_thumb2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://in-moov-ros/meshes/l_thumb2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="l_thumb1-l_thumb2"
+    type="revolute">
+    <origin
+      xyz="0.0013808 0.029105 -0.032428"
+      rpy="0.16588 -0.72297 1.3332" />
+    <parent
+      link="l_thumb1" />
+    <child
+      link="l_thumb2" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      lower="0"
+      upper="1.5707963267949"
+      effort="0.1"
+      velocity="0.5" />
+  </joint>
+  <link
+    name="l_thumb3">
+    <inertial>
+      <origin
+        xyz="-0.00505202141902179 0.00861893857267171 -0.0113803891396402"
+        rpy="0 0 0" />
+      <mass
+        value="0.00583409461747741" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://in-moov-ros/meshes/l_thumb3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://in-moov-ros/meshes/l_thumb3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="l_thumb2-l_thumb3"
+    type="revolute">
+    <origin
+      xyz="0 -0.00050927 -0.035023"
+      rpy="-1.2558 -0.47282 1.224" />
+    <parent
+      link="l_thumb2" />
+    <child
+      link="l_thumb3" />
+    <axis
+      xyz="-0.30256 0.1442 0.94216" />
+    <limit
+      lower="0"
+      upper="1.5707963267949"
+      effort="0.1"
+      velocity="0.5" />
+  </joint>
+  <link
+    name="l_index1">
+    <inertial>
+      <origin
+        xyz="0.00831209367592757 -0.000373332718586361 0.0175460171958466"
+        rpy="0 0 0" />
+      <mass
+        value="0.00573349939835482" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://in-moov-ros/meshes/l_index1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://in-moov-ros/meshes/l_index1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="l_hand-l_index1"
+    type="revolute">
+    <origin
+      xyz="-0.018709 0.058239 -0.07526"
+      rpy="2.7722 -0.38776 2.5136" />
+    <parent
+      link="l_hand" />
+    <child
+      link="l_index1" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      lower="0"
+      upper="1.5708"
+      effort="0.1"
+      velocity="0.5" />
+  </joint>
+  <link
+    name="l_index2">
+    <inertial>
+      <origin
+        xyz="0.00780623620197395 -0.000873491239967314 0.0109435842718293"
+        rpy="0 0 0" />
+      <mass
+        value="0.00321872985282747" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://in-moov-ros/meshes/l_index2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://in-moov-ros/meshes/l_index2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="l_index1-l_index2"
+    type="revolute">
+    <origin
+      xyz="0.00056045 -0.00084901 0.036451"
+      rpy="0.020385 0.015258 0.0049793" />
+    <parent
+      link="l_index1" />
+    <child
+      link="l_index2" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      lower="0"
+      upper="1.5708"
+      effort="0.1"
+      velocity="0.5" />
+  </joint>
+  <link
+    name="l_index3">
+    <inertial>
+      <origin
+        xyz="0.00481905755049324 -0.00244031035884817 0.0137720219784226"
+        rpy="0 0 0" />
+      <mass
+        value="0.00300404560264145" />
+      <inertia
+        ixx="1.33087769362866E-07"
+        ixy="-4.7402367818522E-09"
+        ixz="7.80180186057904E-09"
+        iyy="9.78304100954101E-08"
+        iyz="5.90595656509985E-08"
+        izz="3.65097351607284E-08" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://in-moov-ros/meshes/l_index3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://in-moov-ros/meshes/l_index3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="l_index2-l_index3"
+    type="revolute">
+    <origin
+      xyz="0 -0.00042115 0.024114"
+      rpy="-0.56237 0.040486 -0.70852" />
+    <parent
+      link="l_index2" />
+    <child
+      link="l_index3" />
+    <axis
+      xyz="-0.7587 -0.53411 -0.37295" />
+    <limit
+      lower="0"
+      upper="1.5708"
+      effort="0.1"
+      velocity="0.5" />
+  </joint>
+  <link
+    name="l_middle1">
+    <inertial>
+      <origin
+        xyz="0.0070570275912685 0.00040156820981091 -0.0188473461550678"
+        rpy="0 0 0" />
+      <mass
+        value="0.00722021591537645" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://in-moov-ros/meshes/l_middle1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://in-moov-ros/meshes/l_middle1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="l_hand-l_middle1"
+    type="revolute">
+    <origin
+      xyz="0.00085391 0.044357 -0.086105"
+      rpy="-0.38367 -0.30196 2.4732" />
+    <parent
+      link="l_hand" />
+    <child
+      link="l_middle1" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      lower="0"
+      upper="1.5708"
+      effort="0.1"
+      velocity="0.5" />
+  </joint>
+  <link
+    name="l_middle2">
+    <inertial>
+      <origin
+        xyz="-0.00760110839057948 -0.000938563013457905 -0.0117892259324655"
+        rpy="0 0 0" />
+      <mass
+        value="0.00393381102163741" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://in-moov-ros/meshes/l_middle2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://in-moov-ros/meshes/l_middle2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="l_middle1-l_middle2"
+    type="revolute">
+    <origin
+      xyz="-0.00065409 0.00084977 -0.038834"
+      rpy="-0.052871 -0.01683 -3.1411" />
+    <parent
+      link="l_middle1" />
+    <child
+      link="l_middle2" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="0"
+      upper="1.5708"
+      effort="0.1"
+      velocity="0.5" />
+  </joint>
+  <link
+    name="l_middle3">
+    <inertial>
+      <origin
+        xyz="-0.005768136024001 -0.010698102579485 0.00956120761757329"
+        rpy="0 0 0" />
+      <mass
+        value="0.00375584749478668" />
+      <inertia
+        ixx="1.98813320743088E-07"
+        ixy="8.92815425643265E-10"
+        ixz="-1.7291041141373E-09"
+        iyy="1.56983600983188E-07"
+        iyz="8.10479677752123E-08"
+        izz="4.18678149982642E-08" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://in-moov-ros/meshes/l_middle3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://in-moov-ros/meshes/l_middle3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="l_middle2-l_middle3"
+    type="revolute">
+    <origin
+      xyz="0 -0.00044815 -0.025861"
+      rpy="2.7226 -0.037727 0.723" />
+    <parent
+      link="l_middle2" />
+    <child
+      link="l_middle3" />
+    <axis
+      xyz="0.74929 0.59289 0.29504" />
+    <limit
+      lower="0"
+      upper="1.5708"
+      effort="0.1"
+      velocity="0.5" />
+  </joint>
+  <link
+    name="l_ring1">
+    <inertial>
+      <origin
+        xyz="0.0107628656832858 0.00030669211252779 0.0151876901399566"
+        rpy="0 0 0" />
+      <mass
+        value="0.00357714939511848" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://in-moov-ros/meshes/l_ring1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://in-moov-ros/meshes/l_ring1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="l_hand-l_ring1"
+    type="revolute">
+    <origin
+      xyz="0.01069 0.033358 -0.082392"
+      rpy="-2.8561 0.21954 -0.70758" />
+    <parent
+      link="l_hand" />
+    <child
+      link="l_ring1" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="0"
+      upper="1.5708"
+      effort="0.1"
+      velocity="0.5" />
+  </joint>
+  <link
+    name="l_ring2">
+    <inertial>
+      <origin
+        xyz="-0.00934422855303141 0.000750838826296146 -0.00941791827001182"
+        rpy="0 0 0" />
+      <mass
+        value="0.00203424539689462" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://in-moov-ros/meshes/l_ring2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://in-moov-ros/meshes/l_ring2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="l_ring1-l_ring2"
+    type="revolute">
+    <origin
+      xyz="0.0015346 0.00068509 0.03136"
+      rpy="3.0992 -0.016047 -3.1415" />
+    <parent
+      link="l_ring1" />
+    <child
+      link="l_ring2" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      lower="0"
+      upper="1.5708"
+      effort="0.1"
+      velocity="0.5" />
+  </joint>
+  <link
+    name="l_ring3">
+    <inertial>
+      <origin
+        xyz="0.0116596086496597 0.0060262129201194 0.0200429092988015"
+        rpy="0 0 0" />
+      <mass
+        value="0.00197681350555112" />
+      <inertia
+        ixx="6.45777258007862E-08"
+        ixy="1.47772522012602E-09"
+        ixz="-3.16576405268556E-09"
+        iyy="5.32134296821818E-08"
+        iyz="2.4750904767067E-08"
+        izz="1.17423129568289E-08" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://in-moov-ros/meshes/l_ring3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://in-moov-ros/meshes/l_ring3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="l_ring2-l_ring3"
+    type="revolute">
+    <origin
+      xyz="0.0081249 -0.0026891 -0.015114"
+      rpy="2.7148 0.053766 -2.4058" />
+    <parent
+      link="l_ring2" />
+    <child
+      link="l_ring3" />
+    <axis
+      xyz="0.74022 0.62746 0.2416" />
+    <limit
+      lower="0"
+      upper="1.5708"
+      effort="0.1"
+      velocity="0.5" />
+  </joint>
+  <link
+    name="l_pinkie1">
+    <inertial>
+      <origin
+        xyz="-0.02736843930454 -0.00220820864587578 0.0107864055475941"
+        rpy="0 0 0" />
+      <mass
+        value="0.00512138288317328" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://in-moov-ros/meshes/l_pinkie1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://in-moov-ros/meshes/l_pinkie1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="l_hand-l_pinkie1"
+    type="revolute">
+    <origin
+      xyz="0.018107 0.027014 -0.08457"
+      rpy="2.8435 -0.063551 2.3844" />
+    <parent
+      link="l_hand" />
+    <child
+      link="l_pinkie1" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      lower="0"
+      upper="1.5708"
+      effort="0.1"
+      velocity="0.5" />
+  </joint>
+  <link
+    name="l_pinkie2">
+    <inertial>
+      <origin
+        xyz="0.0154179354244179 -0.000829679957065732 -0.0105512799826459"
+        rpy="0 0 0" />
+      <mass
+        value="0.00276240475681115" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://in-moov-ros/meshes/l_pinkie2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://in-moov-ros/meshes/l_pinkie2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="l_pinkie1-l_pinkie2"
+    type="revolute">
+    <origin
+      xyz="-0.012054 -0.0026872 0.028922"
+      rpy="-3.1171 0.016105 3.1363" />
+    <parent
+      link="l_pinkie1" />
+    <child
+      link="l_pinkie2" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="0"
+      upper="1.5708"
+      effort="0.1"
+      velocity="0.5" />
+  </joint>
+  <link
+    name="l_pinkie3">
+    <inertial>
+      <origin
+        xyz="-0.0056156466850309 -0.015043377983355 0.00613970701174582"
+        rpy="0 0 0" />
+      <mass
+        value="0.00266135727505997" />
+      <inertia
+        ixx="1.07687554967586E-07"
+        ixy="4.12428878121166E-09"
+        ixz="-9.77597948045252E-09"
+        iyy="9.24623585088943E-08"
+        iyz="3.85669613642022E-08"
+        izz="1.73160514843616E-08" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://in-moov-ros/meshes/l_pinkie3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://in-moov-ros/meshes/l_pinkie3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="l_pinkie2-l_pinkie3"
+    type="revolute">
+    <origin
+      xyz="0.0027665 0.0042375 -0.023853"
+      rpy="2.6838 0.16209 -2.4438" />
+    <parent
+      link="l_pinkie2" />
+    <child
+      link="l_pinkie3" />
+    <axis
+      xyz="-0.75622 -0.63102 -0.17305" />
+    <limit
+      lower="0"
+      upper="1.5708"
+      effort="0.1"
+      velocity="0.5" />
+  </joint>
+</robot>
